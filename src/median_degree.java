@@ -52,6 +52,8 @@ public class median_degree {
 			int pointer = sections[1].indexOf(":");
 			String name2 = sections[1].substring(pointer+3, sections[1].length()-1);
 			pointer = sections[2].indexOf(":");
+			//check if actor field is empty, if so continue;
+			if(sections[2].substring(pointer, sections[2].length()).length() <= 3) continue;
 			String name1 = sections[2].substring(pointer+3, sections[2].length()-2);
 			pointer = sections[0].indexOf(":");
 			String time = sections[0].substring(pointer+3, sections[0].length()-2);			
