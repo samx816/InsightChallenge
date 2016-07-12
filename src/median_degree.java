@@ -12,8 +12,8 @@ import java.io.*;
 import java.util.*;
 public class median_degree {
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "InsightDataEngineering/venmo_input/venmo-trans-large.txt";
-		String output = "InsightDataEngineering/venmo_output/output.txt";
+		String path = "../InsightDataEngineering/venmo_input/venmo-trans.txt";
+		String output = "../InsightDataEngineering/venmo_output/output.txt";
 		
 		ArrayList<String> input = new ArrayList<String>();
 		
