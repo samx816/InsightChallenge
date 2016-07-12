@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.*;
 public class median_degree {
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "InsightDataEngineering/venmo_input/venmo-trans.txt";
+		String path = "InsightDataEngineering/venmo_input/venmo-trans-large.txt";
 		String output = "InsightDataEngineering/venmo_output/output.txt";
 		
 		ArrayList<String> input = new ArrayList<String>();
@@ -65,8 +65,8 @@ public class median_degree {
 			} else {
 				Transfer current = new Transfer(actualTime, name1, name2);
 				long minTime = heap.get(0).time;
-				if(actualTime - minTime > 60) { //eviction time
-					while(actualTime - minTime > 60) {
+				if(actualTime - minTime >= 60) { //eviction time
+					while(actualTime - minTime >= 60) {
 						Transfer deleting = heap.get(0);
 						heap.remove(0);
 						removal(nodes, degrees, deleting.actor, deleting.target);
@@ -88,7 +88,7 @@ public class median_degree {
 						heap.add(current);
 						Transfer.makeConnection(nodes, degrees, name1, name2);
 					}
-				} else { // 0 <= actualTime - minTime <= 60
+				} else { // 0 <= actualTime - minTime < 60
 					heap.add(current);
 					Transfer.makeConnection(nodes, degrees, name1, name2);
 				}
