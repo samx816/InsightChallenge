@@ -12,9 +12,8 @@ import java.io.*;
 import java.util.*;
 public class median_degree {
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "venmo_input/venmo-trans.txt";
-		//String path = "C:/Users/sdn24/workspace/Insight/src/venmo-trans.txt";
-		String output = "venmo_output/output.txt";
+		String path = "InsightDataEngineering/venmo_input/venmo-trans.txt";
+		String output = "InsightDataEngineering/venmo_output/output.txt";
 		
 		ArrayList<String> input = new ArrayList<String>();
 		
@@ -158,7 +157,6 @@ public class median_degree {
 		days *= 365;
 		days += ( (Integer.parseInt(partition[1]) -1) *30);
 		partition = partition[2].split(":");
-		// 27T04 28 20Z
 		days += Integer.parseInt(partition[0].substring(0, 2))-1;
 		long seconds = Integer.parseInt(partition[0].substring(3, 5))*3600;
 		seconds += (Integer.parseInt(partition[1])*60);
